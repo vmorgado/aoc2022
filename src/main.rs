@@ -1,5 +1,5 @@
 mod solution;
-use crate::solution::advent_of_code_2022::Solution;
+// use crate::solution::advent_of_code_2022::Solution;
 
 fn main() {}
 
@@ -39,5 +39,20 @@ C Z";
         let result2 = Solution::day2_part2(&input);
         assert_eq!(result, 15);
         assert_eq!(result2, 12);
+    }
+
+    #[test]
+    fn day3() {
+        let input = "vJrwpWtwJgWrhcsFMMfFFhFp
+jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
+PmmdzqPrVvPwwTWBwg
+wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
+ttgJtRGJQctTZtZT
+CrZsJsPPZsGzwwsLwLmpwMDw";
+
+        let result = Solution::day3(&input);
+        let result2 = Solution::day3_part2(&input);
+        assert_eq!(result, 157);
+        assert_eq!(result2, 70);
     }
 }
