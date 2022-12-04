@@ -18,19 +18,19 @@ pub mod day3 {
                 let mut existing_one = HashMap::<char, bool>::new();
                 let mut existing_two = HashMap::<char, bool>::new();
                 let inv_len: i32 = line.chars().count() as i32 / 2;
-                let mut i = 1;
+                let mut i = 0;
                 for c in line.chars() {
                     let prio: i32 = get_priority(c);
+                    i = i + 1;
 
                     if i > inv_len {
                         if existing_one.contains_key(&c) && !existing_two.contains_key(&c) {
                             prio_agr = prio + prio_agr;
                             existing_two.insert(c, true);
                         }
-                    } else {
-                        existing_one.insert(c, true);
+                        continue;
                     }
-                    i = i + 1;
+                    existing_one.insert(c, true);
                 }
             }
 
