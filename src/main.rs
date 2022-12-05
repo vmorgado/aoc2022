@@ -70,4 +70,22 @@ CrZsJsPPZsGzwwsLwLmpwMDw";
         assert_eq!(result, 2);
         assert_eq!(result2, 4);
     }
+
+    #[test]
+    fn day5() {
+        let input = "    [D]
+[N] [C]
+[Z] [M] [P]
+ 1   2   3
+
+move 1 from 2 to 1
+move 3 from 1 to 3
+move 2 from 2 to 1
+move 1 from 1 to 2";
+
+        let result = Solution::day5(&input);
+        let result2 = Solution::day5_part2(&input);
+        assert_eq!(result, "CMZ");
+        assert_eq!(result2, "MCD");
+    }
 }
