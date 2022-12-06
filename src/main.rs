@@ -1,5 +1,4 @@
 mod solution;
-// use crate::solution::advent_of_code_2022::Solution;
 
 fn main() {}
 
@@ -87,5 +86,28 @@ move 1 from 1 to 2";
         let result2 = Solution::day5_part2(&input);
         assert_eq!(result, "CMZ");
         assert_eq!(result2, "MCD");
+    }
+
+    #[test]
+    fn day6() {
+        let inputs: Vec<&str> = Vec::from([
+            "mjqjpqmgbljsphdztnvjfqwrcgsmlb",
+            "bvwbjplbgvbhsrlpgdmjqwftvncz",
+            "nppdvjthqldpwncqszvftbrmjlhg",
+            "nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg",
+            "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw",
+        ]);
+
+        let expected_results: Vec<usize> = Vec::from([7, 5, 6, 10, 11]);
+        let expected_results2: Vec<usize> = Vec::from([19, 23, 23, 29, 26]);
+        for (i, input) in inputs.iter().enumerate() {
+            let expected = expected_results.get(i).unwrap();
+            let expected2 = expected_results2.get(i).unwrap();
+            let result = Solution::day6(&input);
+            let result2 = Solution::day6_part2(&input);
+
+            assert_eq!(result, *expected);
+            assert_eq!(result2, *expected2);
+        }
     }
 }
